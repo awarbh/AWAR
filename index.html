@@ -78,155 +78,80 @@ h2 small{font-size:14px;color:var(--mute);font-weight:400;margin-inline-start:8p
   <h1>تامبلر ٢٠ أونصة <span>يُشبهك</span></h1>
   <p>بطباعة حرارية عالية الجودة. اختر نموذجًا جاهزًا أو خصّص تصميمك بصورتك أنت.</p>
   <!-- قسم خطوات الشراء الذهبي في سطر واحد -->
-<div class="golden-steps-section">
-  <h2 class="golden-steps-title">خطوات الشراء</h2>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="ps-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7e3a1"/><stop offset=".5" stop-color="#e0b650"/><stop offset="1" stop-color="#b98a2c"/>
+    </linearGradient>
+    <linearGradient id="ps-ga" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c99a3a" stop-opacity=".2"/><stop offset=".5" stop-color="#f3d98c"/><stop offset="1" stop-color="#d4a443"/>
+    </linearGradient>
+    <symbol id="ps-arr" viewBox="0 0 270 170">
+      <path d="M262 22 C185 24 130 52 100 100 L112 108 C 140 70 190 46 262 22Z" fill="url(#ps-ga)"/>
+      <path d="M255 14 C170 14 112 44 82 92 L108 96 C 138 60 190 34 255 14Z" fill="url(#ps-ga)"/>
+      <path d="M8 128 L96 60 L90 92 C 130 74 160 62 196 58 C 150 76 122 94 104 120 L100 150 Z" fill="url(#ps-ga)"/>
+    </symbol>
+  </defs>
+</svg>
 
-  <div class="golden-steps-scroll-wrapper">
-    <div class="golden-steps-container">
-      
-      <!-- الخطوة 1 -->
-      <div class="golden-step-card">
-        <div class="golden-step-number">١</div>
-        <div class="golden-step-text"> اختر منتجك أو خصّصه برغبتك</div>
-        <div class="golden-step-icon">📄</div>
-      </div>
+<div class="ps-banner" role="img" aria-label="خطوات الشراء">
+  <div class="ps-stage">
+    <h2 class="ps-title ps-gold">خطوات الشراء</h2>
 
-      <!-- سهم ذهبي صغير -->
-      <div class="golden-arrow-wrapper">
-        <svg class="golden-curved-arrow" viewBox="0 0 100 40">
-          <defs>
-            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#f5e08c" />
-              <stop offset="100%" stop-color="#aa7c11" />
-            </linearGradient>
-          </defs>
-          <path d="M 90 20 Q 50 35 12 20" fill="none" stroke="url(#goldGradient)" stroke-width="7" stroke-linecap="round"/>
-          <polygon points="8,20 22,10 19,28" fill="#e5c158"/>
-        </svg>
+    <div class="ps-step ps-s1">
+      <div class="ps-num ps-gold">١</div>
+      <div class="ps-lbl">اختر منتجك أو خصصه ليُناسبك</div>
+      <div class="ps-ico">
+        <svg viewBox="0 0 64 64" fill="url(#ps-g)"><path d="M12 4h26l14 14v20h-6V24H34V10H18v44h14v6H12z"/><rect x="22" y="28" width="16" height="4" rx="2"/><rect x="22" y="38" width="12" height="4" rx="2"/><rect x="22" y="48" width="8" height="4" rx="2"/><path fill-rule="evenodd" d="M49 38l3 1 2-2 5 3-1 3 2 2 1 3-3 2-1 3-4-1-2 2-5-2 1-4-2-2-1-3 4-1z M50.500 47a3.500 3.500 0 1 0 .1 0z"/></svg>
       </div>
+    </div>
 
-      <!-- الخطوة 2 -->
-      <div class="golden-step-card">
-        <div class="golden-step-number">٢</div>
-        <div class="golden-step-text">أضف طلبك للسلة</div>
-        <div class="golden-step-icon">🛒</div>
+    <div class="ps-step ps-s2">
+      <div class="ps-num ps-gold">٢</div>
+      <div class="ps-lbl">أضف طلبك للسلة</div>
+      <div class="ps-ico">
+        <svg viewBox="0 0 64 64" fill="url(#ps-g)"><path d="M2 6h10l3 8h44l-7 24H21l1 5h30v5H18L9 11H2z"/><path d="M18 18l4 14h30l4-14z" fill="#0b1b43" opacity=".55"/><circle cx="24" cy="55" r="5"/><circle cx="48" cy="55" r="5"/></svg>
       </div>
+    </div>
 
-      <!-- سهم ذهبي صغير -->
-      <div class="golden-arrow-wrapper">
-        <svg class="golden-curved-arrow" viewBox="0 0 100 40">
-          <path d="M 90 20 Q 50 35 12 20" fill="none" stroke="url(#goldGradient)" stroke-width="7" stroke-linecap="round"/>
-          <polygon points="8,20 22,10 19,28" fill="#e5c158"/>
-        </svg>
+    <div class="ps-step ps-s3">
+      <div class="ps-num ps-gold">٣</div>
+      <div class="ps-lbl">أرسل الطلب واتساب</div>
+      <div class="ps-ico">
+        <svg viewBox="0 0 64 64" fill="none" stroke="url(#ps-g)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path d="M32 6a25 25 0 1 1-12 47L6 58l5-14A25 25 0 0 1 32 6z"/><path d="M23 20c-3 3-2 8 3 14s11 9 15 6c1-1 2-3 0-4l-4-2-3 2c-3-1-6-4-7-7l2-3-2-5c-1-1-3-2-4-1z" fill="url(#ps-g)" stroke="none"/></svg>
+        <svg viewBox="0 0 64 64" fill="url(#ps-g)"><path d="M60 6L4 28l16 6 6 20 8-10 14 10zM24 33l26-16-18 20-2 10z" fill-rule="evenodd"/></svg>
       </div>
+    </div>
 
-      <!-- الخطوة 3 -->
-      <div class="golden-step-card">
-        <div class="golden-step-number">٣</div>
-        <div class="golden-step-text">أرسل الطلب واتساب</div>
-        <div class="golden-step-icon">💬</div>
+    <div class="ps-step ps-s4">
+      <div class="ps-num ps-gold">٤</div>
+      <div class="ps-lbl">حوّل المبلغ واستلم الطلب</div>
+      <div class="ps-ico">
+        <svg viewBox="0 0 64 44" fill="url(#ps-g)"><path fill-rule="evenodd" d="M6 2h52a5 5 0 0 1 5 5v30a5 5 0 0 1-5 5H6a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm-1 12v5h54v-5zm6 15v4h14v-4z"/></svg>
+        <svg viewBox="0 0 40 50" fill="none" stroke="url(#ps-g)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h28M26 8l8 8-8 8M36 36H8M14 28l-8 8 8 8"/></svg>
+        <svg viewBox="0 0 64 64" fill="url(#ps-g)"><path d="M32 3l27 11v34L32 61 5 48V14z"/><path d="M32 3l-10 6 27 11 10-6zM5 14l27 12 27-12M32 26v35" fill="none" stroke="#0b1b43" stroke-width="3" opacity=".6"/><path d="M22 9l27 11v10l-6 3V24L16 13z" fill="#0b1b43" opacity=".4"/></svg>
       </div>
+    </div>
 
-      <!-- سهم ذهبي صغير -->
-      <div class="golden-arrow-wrapper">
-        <svg class="golden-curved-arrow" viewBox="0 0 100 40">
-          <path d="M 90 20 Q 50 35 12 20" fill="none" stroke="url(#goldGradient)" stroke-width="7" stroke-linecap="round"/>
-          <polygon points="8,20 22,10 19,28" fill="#e5c158"/>
-        </svg>
-      </div>
+    <svg class="ps-arrow ps-a1"><use href="#ps-arr"/></svg>
+    <svg class="ps-arrow ps-a2"><use href="#ps-arr"/></svg>
+    <svg class="ps-arrow ps-a3"><use href="#ps-arr"/></svg>
 
-      <!-- الخطوة 4 -->
-      <div class="golden-step-card">
-        <div class="golden-step-number">٤</div>
-        <div class="golden-step-text">حوّل المبلغ واستلم طلبك</div>
-        <div class="golden-step-icon">💳⇄📦</div>
-      </div>
+    <i class="ps-dot" style="left:calc(1532*var(--u));top:calc(262*var(--u))"></i>
+    <i class="ps-dot" style="left:calc(1572*var(--u));top:calc(368*var(--u));opacity:.6"></i>
+    <i class="ps-dot" style="left:calc(1476*var(--u));top:calc(348*var(--u));width:calc(6*var(--u));height:calc(6*var(--u))"></i>
+    <i class="ps-dot" style="left:calc(1065*var(--u));top:calc(258*var(--u))"></i>
+    <i class="ps-dot" style="left:calc(1092*var(--u));top:calc(382*var(--u));width:calc(7*var(--u));height:calc(7*var(--u))"></i>
+    <i class="ps-dot" style="left:calc(607*var(--u));top:calc(257*var(--u))"></i>
+    <i class="ps-dot" style="left:calc(595*var(--u));top:calc(376*var(--u));opacity:.6"></i>
+    <i class="ps-dot" style="left:calc(528*var(--u));top:calc(277*var(--u))"></i>
+    <i class="ps-dot" style="left:calc(538*var(--u));top:calc(431*var(--u))"></i>
+  </div>
+</div>
 
     </div>
   </div>
 </div>
-
-<style>
-.golden-steps-section {
-  background-color: #050d21;
-  padding: 30px 10px;
-  text-align: center;
-  direction: rtl;
-}
-
-.golden-steps-title {
-  color: #e5c158;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 25px;
-  text-shadow: 0 0 10px rgba(229, 193, 88, 0.4);
-}
-
-.golden-steps-scroll-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  /* لإخفاء شريط التمرير المزعج وتسهيل السحب */
-  scrollbar-width: thin;
-  scrollbar-color: #d4af37 #050d21;
-}
-
-.golden-steps-container {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  white-space: nowrap;
-  padding: 5px;
-}
-
-.golden-step-card {
-  background-color: #0b1736;
-  border: 2px solid #d4af37;
-  border-radius: 12px;
-  padding: 12px 8px;
-  width: 110px;
-  height: 120px;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
-  flex-shrink: 0;
-}
-
-.golden-step-number {
-  color: #e5c158;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.golden-step-text {
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 500;
-  white-space: normal; /* السماح بالتفاف النص داخل الكارد فقط */
-  line-height: 1.3;
-}
-
-.golden-step-icon {
-  font-size: 18px;
-}
-
-.golden-arrow-wrapper {
-  width: 35px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.golden-curved-arrow {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0px 0px 3px rgba(229, 193, 88, 0.6));
-}
-</style>
 
   </div>
 </div>
