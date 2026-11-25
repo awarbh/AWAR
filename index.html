@@ -278,28 +278,6 @@ function invNo(d){
   var p=function(n){ return ("0"+n).slice(-2); };
   return "AWR-"+String(d.getFullYear()).slice(-2)+p(d.getMonth()+1)+p(d.getDate())+"-"+("000"+Math.floor(Math.random()*10000)).slice(-4);
 }
-  function packInv(d){
-  try{
-    var bytes = new TextEncoder().encode(JSON.stringify(d));
-    var bin = "";
-    for(var i=0;i<bytes.length;i++) bin += String.fromCharCode(bytes[i]);
-    return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
-  }catch(e){ return ""; }
-}
-function unpackInv(code){
-  try{
-    var b64 = code.replace(/-/g,"+").replace(/_/g,"/");
-    while(b64.length % 4) b64 += "=";
-    var bin = atob(b64);
-    var bytes = new Uint8Array(bin.length);
-    for(var i=0;i<bin.length;i++) bytes[i] = bin.charCodeAt(i);
-    return JSON.parse(new TextDecoder().decode(bytes));
-  }catch(e){ return null; }
-}
-function invLink(d){
-  var code = packInv(d);
-  return location.origin + location.pathname + (code ? ("#inv=" + code) : "");
-}
 function showInvoice(d){
   var prod=0, gs=0;
   d.items.forEach(function(x){ prod+=x.price*x.q; if(x.gift) gs+=CFG.gift*x.q; });
@@ -338,12 +316,10 @@ function sendOrder(share){
   var d = { no:invNo(now), when:now, name:$("nm").value.trim(), phone:$("ph").value.trim(), addr:$("ad").value.trim(), loc:$("lc").value.trim(),
     pay:$("pm").value, note:$("nt").value.trim(), ship:CFG.ship, total:tot(),
     items:cart.map(function(x){ return {name:x.name,price:x.price,note:x.note,gift:x.gift,gmsg:x.gmsg,img:x.img,q:x.q}; }) };
-  var url = invLink(d);
   var L = ["طلب جديد من موقع أوار","رقم الفاتورة: "+d.no,"","الاسم: "+d.name,"الهاتف: "+d.phone,"العنوان: "+d.addr,"الموقع: "+d.loc,"","الطلبات:"];
   cart.forEach(function(x,i){ L.push((i+1)+") "+x.name+(x.note?" | ملاحظات: "+x.note:"")+(x.gift?" | 🎁 كرت إهداء: "+x.gmsg:"")+(x.img?" | 📎 صورة":"")+" | الكمية: "+x.q+" | "+fmt(lineTotal(x))); });
   L.push("","المنتجات: "+fmt(sub())); if(giftSum()) L.push("🎁 كروت الإهداء: "+fmt(giftSum()));
   L.push("التوصيل: "+fmt(CFG.ship),"الإجمالي: "+fmt(tot()),"طريقة الدفع: "+d.pay);
-  if(url) L.push("رابط الفاتورة": " + url);
   if(d.note) L.push("ملاحظات: "+d.note);
   var msg=L.join("\n"), imgs=cart.filter(function(x){return x.img;}).map(function(x){return files[x.key];});
   if(share && imgs.length){ navigator.share({files:imgs,text:msg}).catch(function(){}); }
@@ -355,17 +331,6 @@ $("yr").textContent=new Date().getFullYear();
 $("mp").innerHTML='<s class="old">'+fmt(CFG.mpo)+'</s>'+fmt(CFG.mp); $("cp").innerHTML='<s class="old">'+fmt(CFG.cpo)+'</s>'+fmt(CFG.cp);
 payNote();
 render(); upd();
-(function(){
-  var h = location.hash || "";
-  var m = h.match(/[#&]inv=([^&]+)/);
-  if(m && m[1]){
-    var data = unpackInv(decodeURIComponent(m[1]));
-    if(data && data.items && typeof showInvoice === "function"){
-      data.when = new Date(data.when || Date.now());
-      showInvoice(data);
-    }
-  }
-})();  
 </script>
 </body>
 </html>
